@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda tu Hora - Hair Artist C.A</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="imagenes/logo-principal.png" type="image/png">
+    <!-- Librería de FullCalendar -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales/es.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="imagenes/logo-principal.png" alt="Logo Hair Artist C.A">
+        </div>
+        <nav>
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+            <ul class="menu" aria-hidden="true">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="visagismo.html">Visagismo</a></li>
+                <li><a href="colorimetria.html">Colorimetría</a></li>
+                <li><a href="servicios-sugerencias.html">Servicios</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="agenda.html">Agenda tu Hora</a></li>
+                <li><a href="estilista.html">Estilista</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="agenda-section">
+            <h1>Agenda tu Hora: Tu Belleza, Nuestra Prioridad</h1>
+
+            <!-- Introducción -->
+            <div class="content-block">
+                <p>En <strong>Hair Artist C.A</strong>, valoramos tu tiempo y compromiso. Por eso, te ofrecemos una experiencia única al agendar tu cita. Planifica con anticipación y disfruta de beneficios exclusivos, como <strong>prioridad en la atención</strong> y <strong>descuentos especiales</strong>.</p>
+            </div>
+
+            <!-- Beneficios de Agendar con Tiempo -->
+            <div class="content-block">
+                <h2>Beneficios de Agendar con Tiempo</h2>
+                <ul>
+                    <li><strong>Atención Personalizada:</strong> Reservando con anticipación, garantizamos que recibirás toda nuestra atención.</li>
+                    <li><strong>Descuentos Exclusivos:</strong> Clientes que planifican obtienen un <strong>10% de descuento</strong> en su primer servicio.</li>
+                    <li><strong>Flexibilidad de Horarios:</strong> Elige el horario que mejor se adapte a tu rutina.</li>
+                    <li><strong>Fidelidad Recompensada:</strong> Acumula puntos por cada cita y canjéalos por servicios gratuitos.</li>
+                </ul>
+            </div>
+
+            <!-- Calendario Interactivo -->
+            <div class="content-block">
+                <h2>Selecciona tu Fecha y Hora</h2>
+                <div id="calendario"></div>
+            </div>
+
+            <!-- Formulario de Reserva -->
+            <div class="content-block">
+                <h2>Reserva tu Cita</h2>
+                <form id="reservaForm" class="reserva-form">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="servicio">Servicio:</label>
+                        <select id="servicio" name="servicio" required>
+                            <option value="">Selecciona un servicio</option>
+                            <option value="visagismo">Visagismo</option>
+                            <option value="colorimetria">Colorimetría</option>
+                            <option value="corte">Corte de cabello</option>
+                            <option value="peinado">Peinado</option>
+                            <option value="tratamiento">Tratamiento capilar</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha">Fecha seleccionada:</label>
+                        <input type="text" id="fecha" name="fecha" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="hora">Hora seleccionada:</label>
+                        <input type="text" id="hora" name="hora" readonly>
+                    </div>
+                    <button type="submit" class="btn">Reserva ahora y sé la mejor versión de ti misma</button>
+                </form>
+            </div>
+
+            <!-- Llamado a la Acción Final -->
+            <div class="cta">
+                <p>Tu belleza es única, y merece una atención exclusiva. <a href="agenda.html" class="btn">Agenda tu cita hoy</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contacto: info@hairartistca.com | Teléfono: +123 456 789</p>
+    </footer>
+
+    <script>
+        // Configuración del Calendario
+        document.addEventListener('DOMContentLoaded', function() {
+            const calendarEl = document.getElementById('calendario');
+            const calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                locale: 'es',
+                selectable: true,
+                dateClick: function(info) {
+                    document.getElementById('fecha').value = info.dateStr;
+                },
+                events: [
+                    // Ejemplo de eventos (disponibilidad)
+                    { title: 'Disponible', start: '2023-10-10', color: '#4CAF50' },
+                    { title: 'Disponible', start: '2023-10-15', color: '#4CAF50' },
+                    { title: 'No Disponible', start: '2023-10-20', color: '#E74C3C' }
+                ]
+            });
+            calendar.render();
+        });
+
+        // Manejo del Formulario de Reserva
+        document.getElementById('reservaForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const telefono = document.getElementById('telefono').value;
+            const servicio = document.getElementById('servicio').value;
+            const fecha = document.getElementById('fecha').value;
+            const hora = document.getElementById('hora').value;
+
+            if (nombre && email && telefono && servicio && fecha && hora) {
+                alert('Reserva realizada con éxito. Te hemos enviado un correo de confirmación.');
+                document.getElementById('reservaForm').reset();
+            } else {
+                alert('Por favor, completa todos los campos del formulario.');
+            }
+        });
+    </script>
+</body>
+</html>

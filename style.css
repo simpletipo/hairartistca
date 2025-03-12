@@ -1,0 +1,788 @@
+/* ============================================= */
+/* Estilos Generales */
+/* ============================================= */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F9F9F9;
+    color: #333333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #2C3E50;
+    margin-top: 0;
+}
+
+a {
+    color: #2980B9;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #E74C3C;
+}
+
+/* ============================================= */
+/* Header */
+/* ============================================= */
+header {
+    background-color: #2C3E50;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .logo img {
+    max-width: 150px;
+}
+
+nav .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #ECF0F1;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+nav .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav .menu li {
+    margin: 0 15px;
+}
+
+nav .menu li a {
+    color: #ECF0F1;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav .menu li a:hover {
+    color: #F1C40F;
+}
+
+/* ============================================= */
+/* Botones */
+/* ============================================= */
+.btn {
+    background-color: #E74C3C;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #C0392B;
+}
+
+/* ============================================= */
+/* Secciones */
+/* ============================================= */
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* ============================================= */
+/* Banner de Productos y Colaboraciones */
+/* ============================================= */
+.banner {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.banner img {
+    max-width: 45%;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+/* ============================================= */
+/* Formularios */
+/* ============================================= */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #2C3E50;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+form button {
+    background-color: #2980B9;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #1C5980;
+}
+
+/* ============================================= */
+/* Galería */
+/* ============================================= */
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.galeria-item {
+    width: 300px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.galeria-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.galeria-item img:hover {
+    transform: scale(1.05);
+}
+
+/* ============================================= */
+/* Footer */
+/* ============================================= */
+footer {
+    background-color: #2C3E50;
+    color: #ECF0F1;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ============================================= */
+/* Responsive Design */
+/* ============================================= */
+@media (max-width: 768px) {
+    nav .menu-toggle {
+        display: block;
+    }
+
+    nav .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav .menu.active {
+        display: flex;
+    }
+
+    nav .menu li {
+        margin: 10px 0;
+    }
+
+    .banner img {
+        max-width: 100%;
+    }
+
+    .servicios-grid, .testimonios-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* ============================================= */
+/* Estilos para la Sección de FAQs */
+/* ============================================= */
+.faqs-section {
+    padding: 40px 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faqs-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.faqs-section p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.faq-form {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.faq-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #2C3E50;
+}
+
+.faq-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    font-size: 1em;
+    resize: vertical;
+}
+
+.faq-form button {
+    background-color: #2980B9;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.faq-form button:hover {
+    background-color: #1C5980;
+}
+
+.faq-list {
+    text-align: left;
+}
+
+.faq-item {
+    background-color: #FFFFFF;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item h3 {
+    margin-top: 0;
+    color: #E74C3C;
+}
+
+.faq-item p {
+    margin: 10px 0;
+}
+
+.faq-item em {
+    color: #888;
+    font-size: 0.9em;
+}
+
+/* Estilos para la sección de Visagismo */
+.visagismo-section {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.visagismo-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.content-block {
+    margin-bottom: 40px;
+}
+
+.content-block h2 {
+    font-size: 1.8em;
+    color: #E74C3C;
+    margin-bottom: 10px;
+}
+
+.content-block p, .content-block ul, .content-block ol {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.content-block ul, .content-block ol {
+    margin-left: 20px;
+}
+
+.content-block li {
+    margin-bottom: 10px;
+}
+
+.cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.cta .btn {
+    background-color: #2980B9;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.cta .btn:hover {
+    background-color: #1C5980;
+}
+
+/* Estilos para las imágenes de Visagismo */
+.visagismo-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+    .visagismo-img {
+        margin: 10px 0;
+    }
+}
+
+/* Estilos para la sección de Colorimetría */
+.colorimetria-section {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.colorimetria-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.colorimetria-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+    .colorimetria-img {
+        margin: 10px 0;
+    }
+}
+
+/* Estilos para la sección de Servicios */
+.servicios-section {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.servicios-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.servicio {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.servicio h3 {
+    font-size: 1.8em;
+    color: #E74C3C;
+    margin-bottom: 10px;
+}
+
+.servicio p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.servicio .btn {
+    background-color: #2980B9;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.servicio .btn:hover {
+    background-color: #1C5980;
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+    .servicio {
+        padding: 15px;
+    }
+
+    .servicio h3 {
+        font-size: 1.5em;
+    }
+
+    .servicio p {
+        font-size: 1em;
+    }
+}
+
+/* Estilos para la sección de Galería */
+.galeria-section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.galeria-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.galeria-section p {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+}
+
+.galeria-categoria {
+    margin-bottom: 40px;
+}
+
+.galeria-categoria h2 {
+    font-size: 2em;
+    color: #E74C3C;
+    margin-bottom: 20px;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.galeria-item {
+    background-color: #FFFFFF;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.galeria-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.galeria-item p {
+    font-size: 1em;
+    color: #333333;
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+    .galeria-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .galeria-categoria h2 {
+        font-size: 1.8em;
+    }
+}
+
+/* Estilos para la sección de Agenda */
+.agenda-section {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.agenda-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.content-block {
+    margin-bottom: 40px;
+}
+
+.content-block h2 {
+    font-size: 1.8em;
+    color: #E74C3C;
+    margin-bottom: 10px;
+}
+
+.content-block ul {
+    margin-left: 20px;
+}
+
+.content-block li {
+    margin-bottom: 10px;
+}
+
+/* Calendario */
+#calendario {
+    margin-bottom: 20px;
+}
+
+/* Formulario de Reserva */
+.reserva-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.reserva-form .form-group {
+    margin-bottom: 15px;
+}
+
+.reserva-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #2C3E50;
+}
+
+.reserva-form input, .reserva-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.reserva-form button {
+    background-color: #2980B9;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 100%;
+}
+
+.reserva-form button:hover {
+    background-color: #1C5980;
+}
+
+/* Llamado a la Acción */
+.cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.cta .btn {
+    background-color: #E74C3C;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.cta .btn:hover {
+    background-color: #C0392B;
+}
+
+/* Estilos para la sección de Estilista */
+.estilista-section {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.estilista-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.estilista-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.estilista-section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.cta .btn {
+    background-color: #E74C3C;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.cta .btn:hover {
+    background-color: #C0392B;
+}
+
+/* Estilos para la sección de FAQs */
+.faqs-section {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faqs-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.content-block {
+    margin-bottom: 40px;
+}
+
+.content-block h2 {
+    font-size: 1.8em;
+    color: #E74C3C;
+    margin-bottom: 10px;
+}
+
+.estadisticas {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.estadistica {
+    text-align: center;
+    margin: 10px;
+}
+
+.estadistica .numero {
+    font-size: 2em;
+    font-weight: bold;
+    color: #2980B9;
+}
+
+.estadistica .descripcion {
+    font-size: 1em;
+    color: #333333;
+}
+
+/* Selector de Satisfacción */
+#satisfaccion {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#valorSatisfaccion {
+    display: block;
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+/* Formulario de Preguntas */
+#preguntaForm {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#preguntaForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #2C3E50;
+}
+
+#preguntaForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    font-size: 1em;
+    resize: vertical;
+}
+
+#preguntaForm button {
+    background-color: #2980B9;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#preguntaForm button:hover {
+    background-color: #1C5980;
+}

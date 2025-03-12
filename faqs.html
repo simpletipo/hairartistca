@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - Hair Artist C.A</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="imagenes/logo-principal.png" type="image/png">
+    <!-- Librería de Chart.js para gráficos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="imagenes/logo-principal.png" alt="Logo Hair Artist C.A">
+        </div>
+        <nav>
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+            <ul class="menu" aria-hidden="true">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="visagismo.html">Visagismo</a></li>
+                <li><a href="colorimetria.html">Colorimetría</a></li>
+                <li><a href="servicios-sugerencias.html">Servicios</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="agenda.html">Agenda tu Hora</a></li>
+                <li><a href="estilista.html">Estilista</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="faqs-section">
+            <h1>Preguntas Frecuentes (FAQs): Resolviendo tus Dudas</h1>
+
+            <!-- Introducción -->
+            <div class="content-block">
+                <p>En <strong>Hair Artist C.A</strong>, nos esforzamos por brindarte la mejor experiencia. Aquí respondemos las preguntas más comunes sobre nuestros servicios. Si no encuentras lo que buscas, ¡no dudes en contactarnos!</p>
+            </div>
+
+            <!-- Historial de Casos de Éxito -->
+            <div class="content-block">
+                <h2>Historial de Casos de Éxito</h2>
+                <div class="estadisticas">
+                    <div class="estadistica">
+                        <span class="numero">1,200+</span>
+                        <span class="descripcion">Clientes Satisfechos</span>
+                    </div>
+                    <div class="estadistica">
+                        <span class="numero">850+</span>
+                        <span class="descripcion">Transformaciones Completas</span>
+                    </div>
+                    <div class="estadistica">
+                        <span class="numero">20+</span>
+                        <span class="descripcion">Años de Experiencia</span>
+                    </div>
+                    <div class="estadistica">
+                        <span class="numero">4.9/5</span>
+                        <span class="descripcion">Calificación Promedio</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráfico de Satisfacción -->
+            <div class="content-block">
+                <h2>Gráfico de Satisfacción</h2>
+                <canvas id="graficoSatisfaccion"></canvas>
+            </div>
+
+            <!-- Selector de Satisfacción -->
+            <div class="content-block">
+                <h2>¿Cómo calificarías tu experiencia con nosotros?</h2>
+                <p>(0 = Muy insatisfecho, 7 = Muy satisfecho)</p>
+                <input type="range" id="satisfaccion" min="0" max="7" value="0">
+                <span id="valorSatisfaccion">0</span>
+            </div>
+
+            <!-- Preguntas Frecuentes -->
+            <div class="content-block">
+                <h2>Preguntas Frecuentes</h2>
+                <div class="faq-item">
+                    <h3>¿Qué es el visagismo?</h3>
+                    <p>El visagismo es una técnica que estudia las formas del rostro para realzar la belleza natural de cada persona.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Cómo elijo el color de cabello adecuado?</h3>
+                    <p>La colorimetría te ayuda a seleccionar el tono que mejor se adapta a tu piel y estilo.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Ofrecen servicios para eventos especiales?</h3>
+                    <p>Sí, diseñamos peinados y maquillaje que te harán brillar en cualquier ocasión.</p>
+                </div>
+            </div>
+
+            <!-- Formulario para Enviar Preguntas -->
+            <div class="content-block">
+                <h2>¿Tienes alguna pregunta?</h2>
+                <form id="preguntaForm">
+                    <label for="pregunta">Escribe tu pregunta:</label>
+                    <textarea id="pregunta" name="pregunta" rows="4" required></textarea>
+                    <button type="submit" class="btn">Enviar Pregunta</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contacto: info@hairartistca.com | Teléfono: +123 456 789</p>
+    </footer>
+
+    <script>
+        // Gráfico de Satisfacción
+        const ctx = document.getElementById('graficoSatisfaccion').getContext('2d');
+        const graficoSatisfaccion = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Muy Insatisfecho', 'Insatisfecho', 'Neutral', 'Satisfecho', 'Muy Satisfecho'],
+                datasets: [{
+                    label: 'Nivel de Satisfacción',
+                    data: [5, 10, 20, 50, 100],
+                    backgroundColor: [
+                        '#E74C3C',
+                        '#F1C40F',
+                        '#2980B9',
+                        '#2ECC71',
+                        '#9B59B6'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Selector de Satisfacción
+        const satisfaccion = document.getElementById('satisfaccion');
+        const valorSatisfaccion = document.getElementById('valorSatisfaccion');
+
+        satisfaccion.addEventListener('input', function() {
+            valorSatisfaccion.textContent = this.value;
+        });
+
+        // Formulario de Preguntas
+        document.getElementById('preguntaForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const pregunta = document.getElementById('pregunta').value;
+            if (pregunta) {
+                alert('Tu pregunta ha sido enviada. ¡Gracias!');
+                document.getElementById('preguntaForm').reset();
+            } else {
+                alert('Por favor, escribe tu pregunta.');
+            }
+        });
+    </script>
+</body>
+</html>
